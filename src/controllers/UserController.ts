@@ -1,9 +1,11 @@
 import mongoose from 'mongoose';
 
 
-
 class UserController {
 
+    async show() {
+
+    }
 
 }
 

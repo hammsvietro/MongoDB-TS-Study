@@ -6,6 +6,6 @@ routes.get('/', (req, res) => {
     res.send('hello world!');
 });
 
-routes.post('/users', )
+// routes.post('/users', )
 
 export default routes;
