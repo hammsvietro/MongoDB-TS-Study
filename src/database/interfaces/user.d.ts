@@ -8,6 +8,5 @@ export interface IUser extends Document {
     password: string;
 
     // methods:
-    printName(): void;
-    changePassword(oldPassword: string, newPassword: string, newPasswordConfirm: string): void;
+    printData(): void;
 }

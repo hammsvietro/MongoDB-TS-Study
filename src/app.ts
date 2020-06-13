@@ -12,8 +12,9 @@ class App implements IApp{
     express: express.Application;
 
     constructor() {
-       this.express = express();
-       this.database();
+        this.express = express();
+        this.express.use(express.json());
+        this.database();
         this.routes();
     }
 
@@ -27,6 +28,7 @@ class App implements IApp{
     routes() {
         this.express.use(routes);
     }
+
 
 }
 
