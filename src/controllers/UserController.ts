@@ -7,13 +7,9 @@ import User from '../database/models/UserModels';
 class UserController {
 
     async show(req: express.Request, res: express.Response) {
-        const users = await User.find((err, users) => {
-            if (err) return console.error(err);
+        const users = await User.find({}).select('-password');
 
-            return users;
-        });
 
-        console.log(users);
         
         
         res.status(200).send(users);
@@ -21,12 +17,9 @@ class UserController {
 
     async store(req: express.Request, res: express.Response) {
 
-        
-
         const { username, email, password } = req.body;
         
         const encryptedPass = await bcrypt.hash(password, 8);
-
 
         const user = new User({ username, email, password: encryptedPass });
 
