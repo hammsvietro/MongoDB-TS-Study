@@ -1,0 +1,25 @@
+SCRIPT AULA MONGO:
+  
+  -dividida em x partes
+  -criar rest api com mongo/mongoose
+  -crud usuarios e token
+
+
+estrutura:
+
+src:
+  server.ts   # class with the express constructor
+  app.ts                    
+  routes.ts
+  controller:
+    UserController.ts
+    SessionController.ts
+  database:
+    config:
+      index.ts
+    models:
+      interfaces:
+        user.d.ts
+      userModel.ts
+    schemas:
+      userSchema.ts
