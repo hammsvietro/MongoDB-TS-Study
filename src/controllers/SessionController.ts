@@ -11,20 +11,18 @@ class SessionController {
         
         const user = await User.findOne({ email });
 
-        if(!user) return res.status(404).json({ 'not found': 'invalid email/password' });        
+        if(!user) return res.status(404).json({ 'not found': 'invalid email/password' });
 
         if(!await comparePasswords(user.password, password)) return res.status(404).json({ 'not found': 'invalid email/password' });
 
         const token = generateToken({ id: user.id });
 
         const {password: pass, ...responseUser} = user.toJSON();
-
         return res.status(200).json({
             user: responseUser,
             token
         });
     }
 }
-
 
 export default new SessionController();
