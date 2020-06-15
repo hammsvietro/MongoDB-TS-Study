@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-interface data {
+export interface data {
     id: number;
     username?: string;
 }

@@ -1,8 +1,21 @@
 SCRIPT AULA MONGO:
   
-  -dividida em x partes
-  -criar rest api com mongo/mongoose
-  -crud usuarios e token
+  - dividida em x partes
+  - criar rest api com mongo/mongoose
+  - crud usuarios e token
+
+
+FUNCIONALIDADES DA API:
+
+  - cadastrar usuários -> post('/user')
+  - resgatar ids de usuarios -> get('/user')  [produção]
+
+  - logar (resgatar token) -> post('/login')
+
+  ROTA AUTENTICADA:
+    - postar tweet -> post('/tweet/:id')
+    - ver ultimo tweet do usuarios -> get('/tweet/:id')
+    - ver tweets de todos os users -> get('tweet')
 
 
 estrutura:

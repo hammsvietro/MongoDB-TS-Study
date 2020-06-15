@@ -6,12 +6,23 @@ const userSchema = new mongoose.Schema<IUser>({
     username: String,
     email: String,
     password: String,
-    tweets: [String]
+    tweets: [{
+        tweet: String,
+        date: Date
+    }]
 });
 
 
-userSchema.methods.latestTweet = function() {
-    return this.tweets[this.tweets.length - 1];
+userSchema.methods.getTweets = function() {
+    const tweets = this.tweets.map((tweet) => {
+        return {
+            tweet: tweet.tweet,
+            date: tweet.date
+        }
+    });
+    
+
+    return tweets;
 }
 
 const User = mongoose.model<IUser>('User', userSchema);
